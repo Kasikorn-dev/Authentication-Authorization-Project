@@ -20,10 +20,7 @@ export default function RegisterPage() {
     try {
       setError('');
       setSuccess('');
-      const response = await axios.post(
-        'http://localhost:3001/auth/register',
-        formData
-      );
+      await axios.post('http://localhost:3001/auth/register', formData);
       setSuccess('Registration successful! You can now log in.');
     } catch (err: any) {
       setError(err.response?.data?.message || 'Registration failed.');
