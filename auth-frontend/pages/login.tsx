@@ -24,7 +24,7 @@ export default function LoginPage() {
       );
       setToken(response.data.access_token);
       alert('Login successful!');
-    } catch (err) {
+    } catch (err: unknown) {
       setError(err.response?.data?.message || 'Login failed.');
     }
   };
